@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Roboto:ital,wght@1,300&family=Rubik+Puddles&display=swap');
+.add-user{
+    min-height: 100vh;
+   background-image:url(https://img.freepik.com/free-vector/national-doctor-s-day-hand-drawn-background_23-2149438164.jpg?w=2000);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    padding:66px;
+    background-position: center;
+    background-size: cover;
+}
+.add-user-btn{
+    background-color: rgba(23, 97, 166, 0.9);
+    color:#fff;
+    font-size: 1.2rem;
+    border:0;
+    border-radius: 3px;
+    float: right;
+}
+.registerForm{
+    background-image: transparent;
+    border-radius: 10px;
+}

@@ -1,0 +1,23 @@
+.btnLogin{
+    float:right;
+}
+.allow-user{
+    display:flex;
+    /* background-image: url(./LoginImage.jpeg); */
+    min-height: 100vh;
+    justify-content: space-evenly;
+    background-position: center;
+}
+.loginimg2{
+    border-radius: 50%;
+}
+.loginform{
+   
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.hlf{
+    font-family: 'Roboto', sans-serif;
+    color:rgb(21, 72, 150);
+    font-weight: bolder;
+}
