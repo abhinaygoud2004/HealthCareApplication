@@ -1,5 +1,6 @@
 import React from 'react'
 import "./UserProfile.css"
+import { useNavigate } from 'react-router-dom';
 import {
   MDBCol,
   MDBContainer,
@@ -10,8 +11,12 @@ import {
   MDBCardImage,
   MDBBtn,
 } from 'mdb-react-ui-kit';
+import { loginContext } from '../../contexts/loginContext';
+import { useContext } from 'react';
 
 function UserProfile() {
+  let [currentUser]=useContext(loginContext)
+  const navigate = useNavigate();
   return (
     <div>        <section style={{ backgroundColor: '#eee' }}>
     <MDBContainer className="py-5">
@@ -21,7 +26,7 @@ function UserProfile() {
           <MDBCard className="mb-4">
             <MDBCardBody className="text-center">
               <MDBCardImage
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                src={currentUser.Image}
                 alt="avatar"
                 className="rounded-circle"
                 style={{ width: '150px' }}
@@ -29,8 +34,7 @@ function UserProfile() {
               <p className="text-muted mb-1">Full Stack Developer</p>
               <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
               <div className="d-flex justify-content-center mb-2">
-                <MDBBtn>Follow</MDBBtn>
-                <MDBBtn outline className="ms-1">Message</MDBBtn>
+                <button className='btn btn-primary' onClick={()=>navigate("/appointment")}>View Doctors</button>
               </div>
             </MDBCardBody>
           </MDBCard>
@@ -45,7 +49,7 @@ function UserProfile() {
                   <MDBCardText>Full Name</MDBCardText>
                 </MDBCol>
                 <MDBCol sm="9">
-                  <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
+                  <MDBCardText className="text-muted">{currentUser.username}</MDBCardText>
                 </MDBCol>
               </MDBRow>
               <hr />
@@ -54,7 +58,7 @@ function UserProfile() {
                   <MDBCardText>Email</MDBCardText>
                 </MDBCol>
                 <MDBCol sm="9">
-                  <MDBCardText className="text-muted">example@example.com</MDBCardText>
+                  <MDBCardText className="text-muted">{currentUser.email}</MDBCardText>
                 </MDBCol>
               </MDBRow>
               <hr />
@@ -63,7 +67,7 @@ function UserProfile() {
                   <MDBCardText>Mobile</MDBCardText>
                 </MDBCol>
                 <MDBCol sm="9">
-                  <MDBCardText className="text-muted">(098) 765-4321</MDBCardText>
+                  <MDBCardText className="text-muted">{currentUser.phonenumber}</MDBCardText>
                 </MDBCol>
               </MDBRow>
               <hr />
@@ -72,7 +76,7 @@ function UserProfile() {
                   <MDBCardText>Address</MDBCardText>
                 </MDBCol>
                 <MDBCol sm="9">
-                  <MDBCardText className="text-muted">Bay Area, San Francisco, CA</MDBCardText>
+                  <MDBCardText className="text-muted">{currentUser.city}</MDBCardText>
                 </MDBCol>
               </MDBRow>
             </MDBCardBody>
@@ -80,6 +84,7 @@ function UserProfile() {
 
         </MDBCol>
       </MDBRow>
+
 
 
   <div className="userRecords container p-5 d-flex flex-row justify-content-around">

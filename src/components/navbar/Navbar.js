@@ -15,7 +15,8 @@ function Navbar() {
   return (
     <div><nav className="navbar navbar-expand-lg navbar">
     <div className="container-fluid">
-      <h4>ProDoc..</h4>
+      <h4>ProDoc</h4>
+      
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -42,6 +43,12 @@ function Navbar() {
        }} to="/register">Register</NavLink>
       </li>
      }
+     <li className="nav-item">
+            <NavLink className="nav-link text-dark" aria-current="page" to="/about-us" style={({isActive})=>{
+            return isActive?activeLink:inactiveLink;
+          }}>About us</NavLink>
+          </li>
+     
           {userLoginStatus?
          <li className="nav-item">
           <NavLink className="nav-link " aria-current="page"

@@ -17,8 +17,8 @@ function Footer() {
               
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit.
+              We are team of five hats who made this application possible.
+              This is a test site.
             </p>
           </MDBCol>
 

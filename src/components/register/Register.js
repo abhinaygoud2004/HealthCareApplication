@@ -94,6 +94,14 @@ function Register() {
                         <label htmlFor="dob">DOB  </label>
                         <input type="date" name="" id="dob" className='form-control' {...register("DOB", { required: true })} />
                     </div>
+                    <div className="mb-3">
+                        <label htmlFor="city">City  </label>
+                        <input type="text" name="city" id="city" className='form-control' {...register("city", { required: true })} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="phonenumber">Mobile Number  </label>
+                        <input type="text" name="phonenumber" id="phonenumber" className='form-control' {...register("phonenumber", { required: true })} />
+                    </div>
                     {errors.DOB?.type === "required" && <p className='text-danger fw-bold'>*DOB is required</p>}
                     <div className="mb-3">
                         <label htmlFor="image">Select profile pic</label>

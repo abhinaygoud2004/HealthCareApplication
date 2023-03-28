@@ -199,7 +199,7 @@ userApp.post('/login',expressAsyncHandler(async(request,response)=>{
              //if passwords matched
              else{
                 //create a JWT token
-                let jwtToken=jwt.sign({username:userOfDB.username},process.env.SECRET_KEY,{expiresIn:20})
+                let jwtToken=jwt.sign({username:userOfDB.username},process.env.SECRET_KEY,{expiresIn:"1d"})
                 //send token in response
                 delete userOfDB.password
                  response.status(200).send({message:"success",token:jwtToken,user:userOfDB})
