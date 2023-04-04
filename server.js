@@ -6,9 +6,12 @@ const app=exp();
 const userApp=require("./APIs/usersApi")
 
 
+let cors = require("cors");
+app.use(cors());
+
 require('dotenv').config()
 //assign port number
-const port=process.env.PORT||4000
+const port=process.env.PORT
 
 //execute userApi when path starts with /user-api
 app.use('/user-api',userApp)

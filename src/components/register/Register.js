@@ -26,13 +26,13 @@ function Register() {
         axios.post("http://localhost:5500/user-api/register",fd)
         .then(response=>{
           console.log(response)
-          if(response.status===201){
+        //   if(response.status===201){
             //navigate to login component
             navigate("/login")
-          }
-          if(response.status!==201){
-            setErr(response.data.message)
-          }
+        //   }
+        //   if(response.status!==201){
+        //     setErr(response.data.message)
+        //   }
         })
         .catch(err=>{
           //the client was given an error response {4xx,5xx}
@@ -66,7 +66,7 @@ function Register() {
 
 
             {/* //HTTP err message */}
-            {err.length != 0 && <p className='display-3 fw-bold text-center text-danger'>{err}</p>}
+            {/* {err.length != 0 && <p className='display-3 fw-bold text-center text-danger'>{err}</p>} */}
 
 
             <div className="col-11 col-sm-8 col-md-6 mx-auto p-3 registerForm">
